@@ -31,9 +31,9 @@ function FormComponent() {
     <>
       <nav className="bg-indigo-500 text-white flex p-4">
         <div className="navlist wrapper flex items-center medium justify-between">
-          <h1 className="text-[22px] font-medium">Form Handling</h1>
-          <button className="bg-white w-13 h-7 rounded-2xl px-1">
-            <div className="ball bg-indigo-500 h-6 w-6 rounded-full"></div>
+          <h1 className="sm:text-[22px] text-[18px] font-medium">Form Handling</h1>
+          <button className="bg-white w-9 h-5 sm:w-13 sm:h-7 rounded-2xl px-1">
+            <div className="ball bg-indigo-500 sm:h-6 sm:w-6 w-3 h-3 rounded-full"></div>
           </button>
         </div>
       </nav>
@@ -52,7 +52,7 @@ function FormComponent() {
               type="text"
               placeholder="John Doe"
               value={user.name}
-              className="border-1 w-[340px] px-3 py-2 rounded-3xl border-gray-300 outline-none"
+              className="border-1 sm:w-[340px] w-[300px] px-3 py-2 rounded-3xl border-gray-300 outline-none "
               id="name"
               onChange={handleUser}
               name="name"
@@ -68,7 +68,7 @@ function FormComponent() {
               placeholder="johndoe@gmail.com"
               value={user.email}
               className="border-1
-                 w-[340px] px-3 py-2 rounded-3xl border-gray-300 outline-none"
+                 sm:w-[340px] w-[300px] px-3 py-2 rounded-3xl border-gray-300 outline-none "
               id="email"
               onChange={handleUser}
               name="email"
@@ -81,10 +81,10 @@ function FormComponent() {
             </label>
             <input
               type="password"
-              placeholder="wQuix1nkjd22"
+              placeholder="*********"
               value={user.password}
               className="border-1 
-                w-[340px] px-3 py-2 rounded-3xl border-gray-300 outline-none"
+                sm:w-[340px] w-[300px] px-3 py-2 rounded-3xl border-gray-300 outline-none "
               id="password"
               onChange={handleUser}
               name="password"
@@ -100,10 +100,22 @@ function FormComponent() {
         </form>
       </div>
 
-      <div className="users wrapper my-5">
-        <h1 className="text-2xl font-bold">Users</h1>
-        <div className="user-cards">
-            
+      <div className="wrapper">
+        <h1 className="text-2xl sm:mt-5 mt-10 font-bold">Users</h1>
+        <div className="user-container flex flex-wrap justify-start gap-5">
+            {
+                userArr.map((myUsers)=>{
+                    console.log(myUsers);
+
+                    return(
+                        <div className="card flex flex-col border-1 w-[300px] p-5 rounded-3xl mt-5 border-gray-100 shadow-2xl gap-2">
+                                <h1 className="font-medium">{myUsers.name}</h1>
+                                <p className="italic">{myUsers.email}</p>
+                                <p className="bg-indigo-500 w-fit text-white p-1 text-[14px] rounded-2xl">{myUsers.password}</p>
+                        </div>
+                    )
+                })
+            }
         </div>
       </div>
     </>
