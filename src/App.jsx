@@ -1,9 +1,10 @@
 import React from 'react'
+import FormPage from './PAGES/FormPage'
 
 function App() {
   return (
     <div>
-      App hello i am noor
+      <FormPage/>
     </div>
   )
 }
