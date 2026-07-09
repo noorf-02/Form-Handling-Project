@@ -45,10 +45,10 @@ function FormComponent() {
             <h1 className="sm:text-[22px] text-[18px] font-medium">
               Form Handling
             </h1>
-            <button className="bg-white w-9 h-5 sm:w-13 sm:h-7 rounded-2xl px-1">
+            <button className="bg-white w-9 h-5 sm:w-12 sm:h-7 rounded-2xl px-1">
               <div
                 onClick={() => setBtn(!btn)}
-                className={`transiton-all duration-300 ${btn ? "bg-[#1d1d1d]" : "bg-indigo-500"} ${btn ? "translate-x-5" : "translate-0"} ball sm:h-6 sm:w-6 w-3 h-3 rounded-full`}
+                className={`transiton-all duration-300 ${btn ? "bg-[#1d1d1d]" : "bg-indigo-500"} ${btn ? "translate-x-4" : "translate-0"} ball sm:h-6 sm:w-6 w-3 h-3 rounded-full`}
               ></div>
             </button>
           </div>
